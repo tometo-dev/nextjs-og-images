@@ -1,6 +1,8 @@
 import { ImageResponse } from "@vercel/og";
 import * as React from "react";
 
+const TWITTER_HANDLE = "@tsuki42_";
+
 export async function GET(request: Request) {
   const requestUrl = request.url;
 
@@ -29,11 +31,19 @@ export async function GET(request: Request) {
             Sudhanshu&#39;s Blogs
           </div>
         </div>
-        <section tw="flex flex-col flex-1 justify-center items-center">
+        <section tw="flex flex-col flex-1 justify-center items-center px-4">
           <div tw="text-4xl font-bold text-black">{title}</div>
-          <p tw="text-lg text-[#363681]">{description}</p>
+          <p tw="text-lg text-[#363681] text-center">{description}</p>
         </section>
+        <div tw="flex px-4">
+          <div tw="mr-auto text-lg">https://sudh.online</div>
+          <div tw="ml-auto text-lg">{TWITTER_HANDLE}</div>
+        </div>
       </div>
-    )
+    ),
+    {
+      width: 800,
+      height: 420,
+    }
   );
 }
